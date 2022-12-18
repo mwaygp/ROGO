@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<script>
+	$.getJSON("http://twitter.com/statuses/user_timeline.json?screen_name=chrisspooner&count=1&callback=?",
+		function(data){
+			$.each(data, function(i,item){
+			ct = item.text;
+			ct = ct.replace(/http:\/\/\S+/g,  '<a href="$&">$&</a>');
+			ct = ct.replace(/\s(@)(\w+)/g,    ' @<a href="http://twitter.com/$2">$2</a>');
+	 		ct = ct.replace(/\s(#)(\w+)/g,    ' #<a href="http://search.twitter.com/search?q=%23$2">$2</a>');
+	   		$("#tweet").append('<p id="message">'+ct +'</p');
+	  	});
+	 });
+ 	 
+    jQuery(document).ready( function() {
+       var _config = {
+         username: 'spoongraphics',
+         count: 6,
+         period: '7day'
+     };
+    lastFmRecords.init(_config);
+    });
+
+	$('#flickrimages').flickrush({id:'10201900@N03' });
+	</script>
+	<style>	
+body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldset, blockquote {
+	margin: 0; padding: 0; border: 0;
+}
+
+body {
+	background: #f6f5ee url(images/bg.png);
+	font: 14px/22px Helvetica, Sans-Serif;
+}
+
+@font-face {
+	font-family:'Tallys';
+	src: url('images/Tallys.otf') format('opentype');
+}
+
+
+#container {
+	background: url(images/top-bar.png) top repeat-x;
+	background: url(images/top-bar.png) top repeat-x, url(images/footer-top.png) bottom repeat-x;
+	padding: 0 0 31px 0;
+}
+#header {
+	width: 961px; margin: 0 auto; position: relative;
+	overflow: hidden;
+}
+	#header h1 a {
+		position: absolute; top: 5px; left: 376px;display: block; width: 208px; height: 213px; 
+		background: url(images/logo.png); text-indent: -9999px;
+	}
+		#header h1 a:hover {
+			background-position: bottom;
+		}
+	
+	#header ul#nav {
+		float: left; margin: 22px 0 0 24px; list-style: none;
+	}
+		#header ul#nav li {
+			float: left; margin: 0 0 0 45px;
+		}
+			#header ul#nav li:first-child {
+				margin: 0;
+			}
+				#header ul#nav li a {
+					display: block; font: 13px Georgia, Serif; letter-spacing: 2px; color: #eeede6;
+					text-decoration: none;
+				}
+					#header ul#nav li a:hover {
+						color: #d0cfc8;
+					}
+	
+	#header ul#subscribe {
+		float: right; margin: 22px 24px 0 0; list-style: none;
+	}
+		#header ul#subscribe li {
+			float: left; margin: 0 0 0 32px;
+		}
+			#header ul#subscribe li a {
+				display: block; height: 16px; font: 13px Georgia, Serif; letter-spacing: 2px; color: #eeede6;
+				text-decoration: none; padding: 1px 0 0 27px;
+				background: url(images/icons.png) left 1px no-repeat;
+			}
+				#header ul#subscribe li.rss a {
+					background-position: left -16px;
+				}
+					#header ul#subscribe li a:hover {
+						color: #d0cfc8;
+					}
+				
+	#header h2 {
+		margin: 250px 0 0 0; min-width: 500px; clear: both; text-align: center;
+		background: url(images/top-divider.png) center bottom no-repeat; padding: 0 0 30px 0;
+		font: 24px Tallys, Georgia, Serif; letter-spacing: 4px; color: #afada2; 
+		text-shadow: 0px 1px 0px #fff;
+	}
+	#content {
+	width: 917px; margin: -240px auto 0 auto; padding: 280px 22px 0 22px;
+	background: url(images/container-lines.png) repeat-y;
+}	
+
+	#content #main {
+		width: 684px; float: left; 
+	}	
+		#content #main .post {
+			position: relative; margin: 0 0 60px 0; padding: 0 0 66px 0; overflow: hidden;
+			background: url(images/underline.png) bottom repeat-x;
+		}
+			#content #main .post h2 {
+				float: left; margin: 0 0 10px 75px;
+				font: 24px Lucida Grande, Lucida Sans Unicode, Helvetica, Sans-Serif; letter-spacing: normal;
+			}
+			#content #main .post p.date {
+				position: absolute; left: 0; top: 0; padding: 4px 7px 4px 7px; 
+				background: url(images/lines.png);
+				font: bold 40px Helvetica, Sans-Serif; color: #b6b6b1; text-align: center;
+			} 
+				#content #main .post p.date span {
+					font: normal 20px Helvetica, Sans-Serif;
+					display: block; margin: -5px 0 0 0; 
+				}
+			#content #main .post ul.meta {
+				float: left; list-style: none; margin: 0 0 30px 75px; overflow: hidden;
+				font: 16px Helvetica, Sans-Serif; color: #b6b6b1;
+			}
+				#content #main .post ul.meta li {
+					float: left; margin: 0 20px 0 0;
+				}
+					#content #main .post ul.meta li.comments {
+						padding: 0 0 0 32px; background: url(images/star.png) left center no-repeat;
+					}
+			#content #main .post .post-content {
+				clear: both;
+			}	
+	
+		
+			#content #main .pagination {
+				margin: 0 0 60px 0; overflow: hidden;
+			} 
+				#content #main .pagination p {
+					margin: 0;
+				}
+	
+			#content #main .pagination p a {
+				display: block; width: 102px; height: 33px; overflow: hidden;
+				background: url(images/pagination-bg.png); font-size: 16px;
+			}
+				#content #main .pagination p.prev a {
+					float: left; padding: 14px 0 0 46px;
+				}
+				#content #main .pagination p.next a {
+					float: right; text-align: right; padding: 14px 46px 0 0;
+					background-position: 0 -47px;
+				}
+				#content #side {
+		width: 196px; float: left; margin: 0 0 0 37px;
+	}
+	
+		#content #side h3 {
+			font: 22px Tallys, Georgia, Serif; letter-spacing: 4px; color: #afada2; text-align: center; text-shadow: 0px 1px 0px #fff;
+			background: url(images/underline.png) bottom repeat-x; padding: 0 0 15px 0; margin: 0 0 20px 0;
+		}
+	
+		#content #side #categories {
+			margin: 0 0 66px 0;
+		}
+			#content #side #categories ul {
+				list-style: none;
+			}
+				#content #side #categories ul li {
+					position: relative; width: 156px; height: 29px; padding: 11px 20px 0 20px; margin: 0 0 10px 0;
+					background: url(images/category-bg.png); font-size: 16px; text-align: right;
+					color: #afada2; text-shadow: 0px 1px 0px #fff;
+				}
+				#content #side #categories ul li a {
+					float: left; background: url(images/category-fill.png); padding: 0 10px 0 0; 
+				}
+				
+	
+					
+		#content #side #my-sites {
+			margin: 0 0 66px 0;
+		}	
+			#content #side #my-sites dl dt {
+				font-size: 16px; padding: 0 0 0 26px;
+				background: url(images/favicons.png) no-repeat;
+			}			
+				#content #side #my-sites dl dt.bsg {
+					background-position: 0 1px;
+				}
+				#content #side #my-sites dl dt.l25 {
+					background-position: 0 -24px;
+				}
+				#content #side #my-sites dl dt.jakethelab {
+					background-position: 0 -51px;
+				}
+				#content #side #my-sites dl dt.spoongraphics {
+					background-position: 0 -76px;
+				}
+			
+				#content #side #my-sites dl dd {
+					font-size: 14px; color: #bcbbb5; margin: 0 0 10px 0;
+				}
+#footer-container {
+	background: #2f2f28 url(images/footer-bg.png);
+}	
+
+#footer {
+	width: 917px; margin: 0 auto; padding: 20px 22px 66px 22px; overflow: hidden;
+	
+}
+	#footer a {
+		color: #eeede6; text-decoration: none;
+	}
+		#footer a:hover {
+			color: #d0cfc8;
+		}
+	#footer h4 {
+		font: 22px Tallys, Georgia, Serif; letter-spacing: 4px; color: #afada2; margin: 0 0 14px 0;
+	}
+
+	#footer #tweet {
+		width: 897px; height: 39px; margin: 0 auto 38px auto; padding: 19px 10px 0 10px; 
+		background: url(images/twitter-bg.png) repeat-x;
+	}
+		#footer #tweet p#message {
+			float: left; color: #afada2; padding: 0 0 0 25px; font-size: 12px;
+			background: url(images/twitter-bubble.png) left 2px no-repeat;
+		}
+		#footer #tweet p#follow a {
+			float: right; display: block; width: 85px; height: 27px; margin: -3px 0 0 20px;
+			background: url(images/twitter-btn.png); text-indent: -9999px;
+		}
+			#footer #tweet p#follow a:hover {
+				background-position: bottom;
+			}
+	
+	
+	#footer #latest-posts {
+		width: 430px; float: left;
+	}
+		#footer #latest-posts ul {
+			list-style: none;
+		}	
+			#footer #latest-posts ul li {
+				font-size: 16px; margin: 0 0 27px 0;
+			}
+			
+			#footer #latest-posts ul li.subscribe {
+				margin: 0 0 10px 0;
+			}
+				#footer #latest-posts ul li.subscribe a {
+					display: block; height: 17px;
+					font: 13px Georgia, Serif; letter-spacing: 2px; color: #eeede6;
+					padding: 0 0 0 27px; background: url(images/icons.png) left -16px no-repeat;
+				}
+					#footer #latest-posts ul li.subscribe a:hover {
+						color: #d0cfc8;
+					}
+body {
+	font-family: sans-serif;
+	background: ;
+	background: url("")
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+	position: absolute;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+	</style>
+  </head>
+  <body>
+	<div class="jumbotron text-center">
+  <h1></h1>
+  <p></p> 
+</div>
+<!-- Beginning of NAV! -->
+
+<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+    <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="about us.html">About us</a>
+  <a href="products.html">products</a>
+  <a href="blog.html">blog</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div id="main">
+  <h2></h2>
+  <p></p>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+</div>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand img-responsive" href="bootsrtapp.html"><img style="height: 35px" src="C:\Users\mpc\Desktop\rogo\rogo logo.png"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="products.html" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="market-research-tool.html">Market Research Tool</a></li>
+            <li class="divider"></li>
+            <li><a href="products.html">Pricing</a></li>
+          </ul>
+        <li><a href="about us.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    <!-- Navbar Right -->
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+            <form action="login.html">
+                <button class="btn btn-primary btn-md navbar-btn">Login</button>
+            </form>
+        </li>
+        <li>
+             <form action="register.html">
+                <button class="btn btn-primary btn-md navbar-btn">Register</button>
+            </form>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!--END OF NAV -->
+ <div id="container"></div>
+	<div id="header">
+	<h1><a href="#">Chris Spooner</a></h1>
+	<ul id="nav">
+		<li><a href="#">Home</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Archives</a></li>
+		<li><a href="#">Say hello</a></li>
+	</ul>
+	<ul id="subscribe">
+		<li class="twitter"><a href="#">Follow on Twitter</a></li>
+		<li class="rss"><a href="http:#">Subscribe by RSS</a></li>
+	</ul>
+	
+	<h2>The personal blog of mark</h2>
+	
+</div>
+<div id="content">
+	<div id="main">
+		<div class="post">
+			<h2><a href="#">Jake Plays With His New Dog Friends At The Park</a></h2>
+			<p class="date">18 <span>Jul</span></p>
+			<ul class="meta">
+				<li>Posted in <a href="#">Vlog</a></li>
+				<li class="comments"><a href="#">5 Comments</a></li>
+			</ul>
+			<div class="post-content">  
+			
+			</div>	
+		</div>
+		
+		[...]
+		
+		<div class="pagination">
+			<p class="prev"><a href="#">Older posts</a></p>
+			<p class="next"><a href="#">Newer posts</a></p>
+		</div>
+		
+	</div>
+		<div id="side">
+			<div id="categories">
+				<h3>Categories</h3>
+				<ul>
+					<li><a href="#">Apple</a> 4</li>
+					<li><a href="#">Design</a> 3</li>
+					<li><a href="#">Events</a> 2</li>
+					<li><a href="#">Giveaways</a> 5</li>
+					<li><a href="#">Vlog</a> 48</li>
+					<li><a href="#">Website News</a> 2</li>
+				</ul>
+			</div>
+			
+			<div id="my-sites">
+				<h3>My Sites</h3>
+				<dl>
+					<dt class="bsg"><a href="#">Blog.SpoonGraphics</a></dt>
+					<dd>My digital playground where I post various design tutorials.</dd>
+					
+					<dt class="l25"><a href="#">Line25</a></dt>
+					<dd>My second blog featuring various web design tutorials, articles and inspiration.</dd>
+					
+					<dt class="jakethelab"><a href="#">JakeTheLab</a></dt>
+					<dd>My dog’s very own website. See insights into the life of Jake the Labrador Retriever.</dd>
+					
+					<dt class="spoongraphics"><a href="#">SpoonGraphics</a></dt>
+					<dd>Home to my creative Graphic and Web design services and design portfolio.</dd>
+				</dl>
+			</div>
+			
+		</div>
+	</div>
+</div>
+<div id="footer-container">
+	<div id="footer">
+		<div id="tweet">
+			<p id="follow"><a href="#">Follow me</a></p>
+		</div>
+		
+		<div id="latest-posts">
+			<h4>Latest blog posts</h4>
+			<ul>
+				<li><a href="#">Design a Beautiful Cosmic Space Scene in Photoshop</a></li>
+				<li><a href="#">Line25 Sites of the Week for July 16th 2010</a></li>
+				<li><a href="#">Style Your Site According to the Weather with jQuery</a></li>
+				<li><a href="#">This Week’s Favourites – July 9th 2010</a></li>
+				<li><a href="#">Design a Beautiful Cosmic Space Scene in Photoshop</a></li>
+				<li><a href="#">Line25 Sites of the Week for July 16th 2010</a></li>
+				<li><a href="#">Style Your Site According to the Weather with jQuery</a></li>
+				<li><a href="#">This Week’s Favourites – July 9th 2010</a></li>
+				
+				<li class="subscribe"><a href="#">Subscribe to Blog.SpoonGraphics</a></li>
+				<li class="subscribe"><a href="#">Subscribe to Line25</a></li>
+			</ul>
+		</div>
+		
+		<div id="music">
+			<h4>I'm listening to</h4>
+			<div id="lastfmrecords"></div>
+		</div>
+		
+		<div id="socialize">
+			<h4>Socialize</h4>
+			<ul>
+				<li class="twitter"><a href="#">Twitter</a></li>
+				<li class="facebook"><a href="#">Facebook</a></li>
+				<li class="youtube"><a href="#">YouTube</a></li>
+				<li class="dribbble"><a href="#">Dribbble</a></li>
+				<li class="behance"><a href="#">Behance</a></li>
+				<li class="tumblr"><a href="#">Tumblr</a></li>
+				<li class="flickr"><a href="#">Flickr</a></li>
+				<li class="lastfm"><a href="#">Last.FM</a></li>
+				<li class="stumbleupon"><a href="#">StumbleUpon</a></li>
+				<li class="digg"><a href="#">Digg</a></li>
+				<li class="designbump"><a href="#">DesignBump</a></li>
+				<li class="vimeo"><a href="#">Vimeo</a></li>
+			</ul>
+		</div>
+		
+		<div id="photos">
+			<h4>Latest designs &amp; artworks</h4>
+			<div id="flickrimages"></div>
+		</div>
+		
+		<p id="back-top"><a href="#">Back to top</a></p>
+	</div>
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+  </body>
+</html>

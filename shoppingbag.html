@@ -1,0 +1,91 @@
+<!Doctype>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+<div style="min-height: 800px;">
+    <div id="cart_wrapper">
+        <form id="cart_form" action="#">
+            <div class="cart-total">
+            <strong>Total Charges:</strong> $<span>0</span>
+            <input id="total-hidden-charges" name="total-hidden-charges" type="hidden" value="0" /></div>
+            <button id="Submit">CheckOut</button>
+        </form>
+    </div>
+    <div id="wrap">
+        <a id="show_cart" href="javascript:void(0)">View Cart</a>
+        <ul>
+            <li id="1">
+                <img class="items" src="product_img/1.jpg" alt="" height="100" />
+                <div>Red Grocery Bag</div>
+            </li>
+            <li id="2">
+                <img class="items" src="product_img/2.jpg" alt="" height="100" />
+                <div>Reusable Grocery Bag</div></li>
+            <li id="3">
+                <img class="items" src="product_img/3.jpg" alt="" height="100" />
+                <div>White Grocery Bag</div></li>
+            <li id="4">
+                <img class="items" src="product_img/4.jpg" alt="" height="100" />
+                <div>Yellow Grocery Bag</div></li>
+            <!-- Detail Boxes for above four li -->
+            <div id="detail-1" class="detail-view">
+                <div class="close">
+                    <a href="javascript:void(0)">x</a></div>
+                <img class="detail_images" src="product_img/1.jpg" alt="" width="340" height="310" />
+                <div class="detail_info">
+                    <label class="item_name">Red Grocery Bag</label>
+                    shopping bag, shopping, bag, merchandise, consumerism, gift:
+                    $<span class="price">80.00</span>
+                    <button class="add-to-cart-button">Add to Cart</button>
+                </div>
+            </div>
+            <div id="detail-2" class="detail-view">
+            <div class="close">
+                <a href="javascript:void(0)">x</a></div>
+            <img class="detail_images" src="product_img/2.jpg" alt="" width="340" height="310" />
+            <div class="detail_info">
+            
+                <label class="item_name">Reusable Grocery Bag</label>
+            
+                    shopping bag, shopping, bag, merchandise, consumerism, gift:
+            
+                    $<span class="price">70.00</span>
+            
+                <button class="add-to-cart-button">Add to Cart</button></div>
+            </div>
+            <div id="detail-3" class="detail-view">
+            <div class="close">
+                <a href="javascript:void(0)">x</a></div>
+            <img class="detail_images" src="product_img/3.jpg" alt="" width="340" height="310" />
+            <div class="detail_info">
+            
+                <label class="item_name">White Grocery Bag</label>
+            
+                    shopping bag, shopping, bag, merchandise, consumerism, gift:
+            
+                    $<span class="price">50.00</span>
+            
+                <button class="add-to-cart-button">Add to Cart</button></div>
+            </div>
+            <div id="detail-4" class="detail-view">
+                <div class="close">
+                    <a href="javascript:void(0)">x</a></div>
+                <img class="detail_images" src="product_img/4.jpg" alt="" width="340" height="310" />
+                <div class="detail_info">
+                    <label class="item_name">Yellow Grocery Bag</label>
+                        shopping bag, shopping, bag, merchandise, consumerism, gift:
+                
+                        $<span class="price">90.00</span>
+                    <button class="add-to-cart-button">Add to Cart</button>
+                </div>
+            </div>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

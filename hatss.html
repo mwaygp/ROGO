@@ -1,0 +1,490 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="java.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	  <script>
+  $(document).ready(function() {
+ 
+  $('.color-choose input').on('click', function() {
+      var headphonesColor = $(this).attr('data-image');
+ 
+      $('.active').removeClass('active');
+      $('.left-column img[data-image = ' + headphonesColor + ']').addClass('active');
+      $(this).addClass('active');
+  });
+ 
+});
+  </script>
+  <style>
+<style>
+  /* Basic Styling */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+ 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+}
+ 
+/* Columns */
+.left-column {
+  width: 65%;
+  position: relative;
+}
+ 
+.right-column {
+  width: 35%;
+  margin-top: 60px;
+}
+ 
+ 
+/* Left Column */
+.left-column img {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+ 
+.left-column img.active {
+  opacity: 1;
+}
+ 
+ 
+/* Right Column */
+ 
+/* Product Description */
+.product-description {
+  border-bottom: 1px solid #E1E8EE;
+  margin-bottom: 20px;
+}
+.product-description span {
+  font-size: 18px;
+  color: #358ED7;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.product-description h1 {
+  font-weight: 300;
+  font-size: 52px;
+  color: #43484D;
+  letter-spacing: -2px;
+}
+.product-description p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #86939E;
+  line-height: 24px;
+}
+ 
+/* Product Configuration */
+.product-color span,
+.cable-config span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #86939E;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+ 
+/* Product Color */
+.product-color {
+  margin-bottom: 30px;
+}
+ 
+.color-choose div {
+  display: inline-block;
+}
+ 
+.color-choose input[type="radio"] {
+  display: none;
+}
+ 
+.color-choose input[type="radio"] + label span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 50%;
+}
+ 
+.color-choose input[type="radio"] + label span {
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.33);
+}
+ 
+.color-choose input[type="radio"]#red + label span {
+  background-color: #C91524;
+}
+.color-choose input[type="radio"]#blue + label span {
+  background-color: #314780;
+}
+.color-choose input[type="radio"]#black + label span {
+  background-color: #323232;
+}
+ 
+.color-choose input[type="radio"]:checked + label span {
+  background-image: url(images/check-icn.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+ 
+/* Cable Configuration */
+.cable-choose {
+  margin-bottom: 20px;
+}
+ 
+.cable-choose button {
+  border: 2px solid #E1E8EE;
+  border-radius: 6px;
+  padding: 13px 20px;
+  font-size: 14px;
+  color: #5E6977;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all .5s;
+}
+ 
+.cable-choose button:hover,
+.cable-choose button:active,
+.cable-choose button:focus {
+  border: 2px solid #86939E;
+  outline: none;
+}
+ 
+.cable-config {
+  border-bottom: 1px solid #E1E8EE;
+  margin-bottom: 20px;
+}
+ 
+.cable-config a {
+  color: #358ED7;
+  text-decoration: none;
+  font-size: 12px;
+  position: relative;
+  margin: 10px 0;
+  display: inline-block;
+}
+.cable-config a:before {
+  content: "?";
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 2px solid rgba(53, 142, 215, 0.5);
+  display: inline-block;
+  text-align: center;
+  line-height: 16px;
+  opacity: 0.5;
+  margin-right: 5px;
+}
+ 
+/* Product Price */
+.product-price {
+  display: flex;
+  align-items: center;
+}
+ 
+.product-price span {
+  font-size: 26px;
+  font-weight: 300;
+  color: #43474D;
+  margin-right: 20px;
+}
+ 
+.cart-btn {
+  display: inline-block;
+  background-color: #0087e6;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 12px 30px;
+  transition: all .5s;
+}
+.cart-btn:hover {
+  background-color: #64af3d;
+}
+ 
+/* Responsive */
+@media (max-width: 940px) {
+  .container {
+    flex-direction: column;
+    margin-top: 60px;
+  }
+ 
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+ 
+  .left-column img {
+    width: 300px;
+    right: 0;
+    top: -65px;
+    left: initial;
+  }
+}
+ 
+@media (max-width: 535px) {
+  .left-column img {
+    width: 220px;
+    top: -85px;
+  }
+}
+.box {
+  background: #36a9ea;
+  background: -moz-linear-gradient(top, #36a9ea 0%, #127fd2 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#36a9ea), color-stop(100%,#127fd2));
+  background: -webkit-linear-gradient(top, #36a9ea 0%,#127fd2 100%);
+  background: -o-linear-gradient(top, #36a9ea 0%,#127fd2 100%);
+  background: -ms-linear-gradient(top, #36a9ea 0%,#127fd2 100%);
+  background: linear-gradient(top, #36a9ea 0%,#127fd2 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#36a9ea', endColorstr='#127fd2',GradientType=0 );
+  border: 1px solid #00599d;
+  color: #fff;
+  padding: 8px 20px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, .1), inset 0px 1px 0px 0px rgba(250, 250, 250, .3);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, .1), inset 0px 1px 0px 0px rgba(250, 250, 250, .3);
+  text-shadow: 0px 1px 1px #156cc4;
+  filter: dropshadow(color=#156cc4, offx=0, offy=1);
+  font-size: 10pt; 
+  width: 40px;
+}
+ 
+.box:hover {
+  background: #2f90d5;
+  background: -moz-linear-gradient(top, #2f90d5 0%, #0351b7 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2f90d5), color-stop(100%,#0351b7));
+  background: -webkit-linear-gradient(top, #2f90d5 0%,#0351b7 100%);
+  background: -o-linear-gradient(top, #2f90d5 0%,#0351b7 100%);
+  background: -ms-linear-gradient(top, #2f90d5 0%,#0351b7 100%);
+  background: linear-gradient(top, #2f90d5 0%,#0351b7 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#2f90d5', endColorstr='#0351b7',GradientType=0 );
+}
+ 
+.box:active {
+  background: #127fd2;
+  -webkit-box-shadow: inset 0px 2px 1px 0px rgba(0, 47, 117, .5), 0px 1px 1px 0px rgba(0, 0, 0, 0);
+  box-shadow: inset 0px 2px 1px 0px rgba(0, 47, 117, .5), 0px 1px 1px 0px rgba(0, 0, 0, 0); 
+}
+</style>
+</head>
+<body>  
+<!-- Beginning of NAV! -->
+  <div class="container">
+	<!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header"> 
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand img-responsive" href="bootsrtapp.html"><img style="height: 35px" src="C:\Users\mpc\Desktop\rogo\rogo logo.png"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="products.html">products</a></li>
+            <li class="divider"></li>
+            <li><a href="shirts.html">shirts</a></li>
+			<li><a href="divider"></li>
+			<li><a href="hats.html">hats</a></li>
+          </ul>
+        <li><a href="about us.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+	  <form action="http://www.google.com" class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+    </div>
+    <button type="submit" class="btn btn-default">
+        <span class="glyphicon glyphicon-search"></span>
+    </button>
+</form>
+    <!-- Navbar Right -->
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+            <form action="login.html">
+                <button class="btn btn-primary btn-md navbar-btn">Login</button>
+            </form>
+        </li>
+        <li>
+             <form action="register.html">
+                <button class="btn btn-primary btn-md navbar-btn">Register</button>
+            </form>
+        </li>
+		<li>
+             <form action="index.html">
+                <button class="btn btn-primary btn-md navbar-btn">cart</button>
+            </form>
+        </li>
+      </ul>
+	  <div>
+	  </div>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!--END OF NAV -->
+
+<div class="row">
+
+    <a class="cart-icon">
+      <span id="totalItems">0</span>
+      <ul class="cart"></ul>
+    </a>
+  
+
+    <div class="productosWrapper large-12 columns">
+      
+    </div>
+
+  </div>
+
+  
+  <main class="container">
+      <!-- Left Column / Headphones Image -->
+      <div class="left-column">
+        <img value="black" data-image="black" src="C:\Users\mpc\Desktop\rogo\hats\strpied hat.jpg" alt="">
+        <img value="blue" data-image="blue" src="C:\Users\mpc\Desktop\rogo\hats\51wlhNGHwZL._SX342_QL70_.jpg" alt="">
+        <img value="red" data-image="red" class="active" src="C:\Users\mpc\Desktop\rogo\hats\41bCbISfxGL._SL500_.jpg" alt="">
+      </div>
+      <!-- Right Column -->
+      <div class="right-column">
+        <!-- Product Description -->
+        <div class="product-description">
+		  <span>Striped hats
+          </span>
+          <h1>All type of hats
+          </h1>
+          <p>New: A brand-new, unused. shirt comes with 50% polyester and 50% cotton.Feels really comfortable and nice.
+          </p>
+        </div>
+        <!-- Product Configuration -->
+        <div class="product-configuration">
+          <!-- Product Color -->
+          <div class="product-color">
+            <span>Select Color
+            </span>
+            <div class="color-choose">
+              <div>
+                <input data-image="red" type="radio" id="red" name="color" value="red" checked>
+                <label for="red">
+                  <span>
+                  </span>
+                </label>
+              </div>
+              <div>
+                <input data-image="blue" type="radio" id="blue" name="color" value="blue">
+                <label for="blue">
+                  <span>
+                  </span>
+                </label>
+              </div>
+              <div>
+                <input data-image="black" type="radio" id="black" name="color" value="black">
+                <label for="black">
+                  <span>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- Cable Configuration -->
+          <div class="cable-config">
+            <span>hat configuration
+            </span>
+            <select class="item_size">
+        <option value="Small"> Small </option>
+        <option value="Medium"> Medium </option>
+        <option value="Large"> Large </option>
+		</select>
+            <a href="#">other hats info
+            </a>
+          </div>
+        </div>
+        <!-- Product Pricing -->
+        <div class="product-price">
+          <span>$50
+          </span>
+		  <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+  <!-- Identify your business so that you can collect the payments. -->
+  <input type="hidden" name="business" value="kin@kinskards.com">
+
+  <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+  <input type="hidden" name="cmd" value="_cart">
+  <input type="hidden" name="add" value="1">
+
+  <!-- Specify details about the item that buyers will purchase. -->
+  <input type="hidden" name="item_name" value="Birthday - Cake and Candle">
+  <input type="hidden" name="amount" value="3.95">
+  <input type="hidden" name="currency_code" value="USD">
+
+  <!-- Display the payment button. -->
+  <input type="image" name="submit"
+    src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png"
+    alt="Add to Cart">
+  <img alt="" width="1" height="1"
+    src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+</form>
+
+          </a>
+        </div>
+      </div>
+    </main>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8">
+    <script type="text/javascript" src="java.js"></script>
+	</script>
+    <script src="script.js" charset="utf-8">
+    </script>
+ 
+	<div class=""><a href="contact.html"></a></div>
+	
+
+  </section>
+	
+
+</div>
+<div class="footer">
+ &copy;2017 ROGO LLC
+	</div>
+</body>
+</html>
